@@ -1,0 +1,27 @@
+minimum_cumulusci_version: '3.28.0'
+project:
+    name: Food-Bank-2
+    package:
+        name: Food-Bank-2
+        api_version: '50.0'
+    git:
+        default_branch: 'main'
+    test:
+        name_match: '%Test%'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Food-Bank-2/tests
+            options:
+                outputdir: robot/Food-Bank-2/results
+
+    robot_testdoc:
+        options:
+            path: robot/Food-Bank-2/tests
+            output: robot/Food-Bank-2/doc/Food-Bank-2_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
